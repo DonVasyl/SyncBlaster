@@ -25,27 +25,39 @@ all:
 	@echo
 	@echo " - ATTINY25:"
 	@echo "                    build_tiny25"
+	@echo "                    build_singlenote_tiny25"
 	@echo "                    build_testing_tiny25"
+	@echo "                    build_testing_singlenote_tiny25"
 	@echo "                    fuse_read_tiny25"
 	@echo "                    fuse_write_tiny25"
 	@echo "                    burn_tiny25"
+	@echo "                    burn_singlenote_tiny25"
 	@echo "                    burn_testing_tiny25"
+	@echo "                    burn_testing_singlenote_tiny25"
 	@echo
 	@echo " - ATTINY45:"
 	@echo "                    build_tiny45"
+	@echo "                    build_singlenote_tiny45"
 	@echo "                    build_testing_tiny45"
+	@echo "                    build_testing_singlenote_tiny45"
 	@echo "                    fuse_read_tiny45"
 	@echo "                    fuse_write_tiny45"
 	@echo "                    burn_tiny45"
+	@echo "                    burn_singlenote_tiny45"
 	@echo "                    burn_testing_tiny45"
+	@echo "                    burn_testing_singlenote_tiny45"
 	@echo	
 	@echo " - ATTINY85:"
 	@echo "                    build_tiny85"
+	@echo "                    build_singlenote_tiny85"
 	@echo "                    build_testing_tiny85"
+	@echo "                    build_testing_singlenote_tiny85"
 	@echo "                    fuse_read_tiny85"
 	@echo "                    fuse_write_tiny85"
 	@echo "                    burn_tiny85"
+	@echo "                    burn_singlenote_tiny85"
 	@echo "                    burn_testing_tiny85"
+	@echo "                    burn_testing_singlenote_tiny85"
 	@echo
 
 OBJECTS = sb_main.o sb_delay.o sb_tascam.o sb_midiusi.o
@@ -125,13 +137,30 @@ testing: _testing $(OBJECTS_TESTING)
 	@echo "`tput rev; tput setaf 3` *** TEST SUITE CODE READY.                                 *** `tput sgr0`"
 	@echo
 
+_single_note_gate_mode:
+	@echo
+	@echo "`tput rev; tput setaf 5` *** ATTENTION: THIS IS SINGLE NOTE GATE MODE BUILD!        *** `tput sgr0`"
+	@echo
+	$(eval SB_SINGLE_NOTE_GATE_MODE := "single_note_gate_mode")
+	$(eval CFLAGS += -DSB_SINGLE_NOTE_GATE_MODE=$(SB_SINGLE_NOTE_GATE_MODE))
+
+single_note_gate_mode: _single_note_gate_mode
+
 build_tiny25: setenv_tiny25 sync_blaster.hex
 build_tiny45: setenv_tiny45 sync_blaster.hex
 build_tiny85: setenv_tiny85 sync_blaster.hex
 
+build_singlenote_tiny25: setenv_tiny25 single_note_gate_mode sync_blaster.hex
+build_singlenote_tiny45: setenv_tiny45 single_note_gate_mode sync_blaster.hex
+build_singlenote_tiny85: setenv_tiny85 single_note_gate_mode sync_blaster.hex
+
 build_testing_tiny25: setenv_tiny25 testing sync_blaster_testing.hex
 build_testing_tiny45: setenv_tiny45 testing sync_blaster_testing.hex
 build_testing_tiny85: setenv_tiny85 testing sync_blaster_testing.hex
+
+build_testing_singlenote_tiny25: setenv_tiny25 testing single_note_gate_mode sync_blaster_testing.hex
+build_testing_singlenote_tiny45: setenv_tiny45 testing single_note_gate_mode sync_blaster_testing.hex
+build_testing_singlenote_tiny85: setenv_tiny85 testing single_note_gate_mode sync_blaster_testing.hex
 
 fuse_read_tiny25: setenv_tiny25 _fuse_read
 fuse_read_tiny45: setenv_tiny45 _fuse_read
@@ -145,6 +174,14 @@ burn_tiny25: setenv_tiny25 sync_blaster.hex _burn
 burn_tiny45: setenv_tiny45 sync_blaster.hex _burn
 burn_tiny85: setenv_tiny85 sync_blaster.hex _burn
 
+burn_singlenote_tiny25: setenv_tiny25 single_note_gate_mode sync_blaster.hex _burn
+burn_singlenote_tiny45: setenv_tiny45 single_note_gate_mode sync_blaster.hex _burn
+burn_singlenote_tiny85: setenv_tiny85 single_note_gate_mode sync_blaster.hex _burn
+
 burn_testing_tiny25: setenv_tiny25 testing sync_blaster_testing.hex _burn
 burn_testing_tiny45: setenv_tiny45 testing sync_blaster_testing.hex _burn
 burn_testing_tiny85: setenv_tiny85 testing sync_blaster_testing.hex _burn
+
+burn_testing_singlenote_tiny25: setenv_tiny25 testing single_note_gate_mode sync_blaster_testing.hex _burn
+burn_testing_singlenote_tiny45: setenv_tiny45 testing single_note_gate_mode sync_blaster_testing.hex _burn
+burn_testing_singlenote_tiny85: setenv_tiny85 testing single_note_gate_mode sync_blaster_testing.hex _burn
