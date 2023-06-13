@@ -17,7 +17,20 @@ ISR(TIM1_OVF_vect) {
 		m_Timer1--;
 	}
 
-	TCNT1 = 0x00;
+	TCNT1   = 0x00; // reset Timer/Counter1 
+}
+
+void SB_DELAY_Init(void) {
+ 	TCCR1   = 0x00; // stop Timer/Counter1 
+	TCNT1   = 0x00; // reset Timer/Counter1 
+
+ 	GTCCR  |= _BV(PSR1); // Reset prescalers of Timer/Counter1 
+
+  	OCR1A   = 0x00;
+  	OCR1C   = 0xFF;
+
+	TIMSK  |= ( 1 << TOIE1 ); // enable Timer/Counter1 Overflow Interrupt
+	TCCR1  |= _BV( CS13 ) | _BV( CS11 ) | _BV( CS10 ); // start
 }
 
 void SB_DELAY_Delay(uint8_t lDelay) {
