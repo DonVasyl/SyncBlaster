@@ -28,46 +28,62 @@ int main(void) {
 	DDRB = 0b00011110; 
 	PORTB = 0b00000000;
 
-	// disable USI
-	USICR = 0x00;
+	// initialize subsystems
+	SB_DELAY_Init();
+	SB_MIDIUSI_Init();
 
-	// Timer0 init (USI-triggering timer)
-	TCCR0A  = 0x00;
-  	TCCR0B  = 0x00;
- 	TCCR0A |= (1 << WGM01);
-	TCCR0B |= (1 << CS00);
+	power_adc_disable(); // save some electric power
 
-	// Timer1 init (delay timer)
- 	TCCR1 = 0x00; // Stop timer
-
- 	GTCCR |= _BV(PSR1) | _BV(PSR0); // Reset prescalers of Timer/Counter1 
-  	OCR1A = 0; // T = prescaler / 1MHz = 0.004096s; OCR1A = (1s/T) - 1 = 243
-  	OCR1C = 255; //
-
-	TCCR1 |= _BV( CS13 ) | _BV( CS11 ) | _BV( CS10 );
-
-	TCNT0 = 0;
-	TCNT1 = 0;
-
-	TIMSK |= ( 1 << TOIE1 ); // enable Timer/Counter1 Overflow Interrupt
-
-	power_adc_disable();
-
-	sei();
+	sei(); // enable interrupts
 
 #ifdef SB_TESTING
 	SB_DEBUG_BlinkMIDIByte(&m_DEBUG_Buffy);
 #endif
 
     while (1) {
-		SB_MIDIUSI_SampleByte();
+		switch(SB_MIDIUSI_SampleByte()) {
+			case SB_MIDIUSI_REVERSE_8_BITS(SB_MIDI_START):
+				SB_TASCAM_Record();
+				break;
 
-		if(USIBR == SB_MIDI_START) {
-			SB_TASCAM_Record();
-		}
+			case SB_MIDIUSI_REVERSE_8_BITS(SB_MIDI_STOP):
+				SB_TASCAM_StopAndRewind();
+				break;
 
-		if(USIBR == 0x3F) { // FC
-			SB_TASCAM_StopAndRewind();
+			case SB_MIDIUSI_COMPOSE_OP_AND_CHANNEL(SB_MIDI_NOTE_ON, SB_MIDI_IN_CHANNEL):
+				switch(SB_MIDIUSI_SampleByte()) {
+				case SB_MIDIUSI_REVERSE_8_BITS(SM_MIDI_NOTE_START_GATE_STOP):
+					SB_TASCAM_Record();
+					break;
+
+#ifndef SB_SINGLE_NOTE_GATE_MODE	
+				case SB_MIDIUSI_REVERSE_8_BITS(SM_MIDI_NOTE_STOP):
+					SB_TASCAM_StopAndRewind();
+					break;
+#endif
+
+				default:
+					continue;
+
+				}
+				break;
+#ifdef SB_SINGLE_NOTE_GATE_MODE	
+			case SB_MIDIUSI_COMPOSE_OP_AND_CHANNEL(SB_MIDI_NOTE_OFF, SB_MIDI_IN_CHANNEL):
+				switch(SB_MIDIUSI_SampleByte()) {
+				case SB_MIDIUSI_REVERSE_8_BITS(SM_MIDI_NOTE_START_GATE_STOP):
+					SB_TASCAM_StopAndRewind();
+					break;
+				
+				default:
+					continue;
+
+				}
+				break;
+#endif
+
+			default:
+				continue;
+
 		}
 	}
 }

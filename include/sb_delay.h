@@ -4,4 +4,5 @@
  *
  */
 
+extern void SB_DELAY_Init(void);
 extern void SB_DELAY_Delay(uint8_t lDelay);

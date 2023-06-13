@@ -4,4 +4,5 @@
  *
  */
 
+extern void SB_MIDIUSI_Init(void);
 extern uint8_t  SB_MIDIUSI_SampleByte(void);
