@@ -2,6 +2,8 @@
 ### MIDI input interface for TASCAM DP00x series of multitrack recorders
 ### based on Microchip ATtiny25/45/85 MCU
 
+![SyncBlaster prototype rev 3 schematics drawn in KiCAD](https://github.com/DonVasyl/SyncBlaster/blob/assets/images/sync_schematics_rev3.png?raw=true)
+
 ## Main features:
 * Opto-coupled MIDI input
 * Firmware image below 1024 bytes
