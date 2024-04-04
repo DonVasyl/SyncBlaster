@@ -6,9 +6,9 @@
 
   (title_block
     (title "MIDI input interface for TASCAM DP00x")
-    (date "2023-06-16")
-    (rev "2")
-    (company "Copyright (c) Mateusz Maciejewski ^ TOXIC_DEATH.117, 2021 - 2023")
+    (date "2024-04-04")
+    (rev "3")
+    (company "Copyright (c) Mateusz Maciejewski ^ TOXIC_DEATH.117, 2021 - 2024")
   )
 
   (lib_symbols
@@ -1007,9 +1007,9 @@
   )
 
   (no_connect (at 119.38 107.95) (uuid 3be6987b-0978-4674-873c-98d38b63cd49))
+  (no_connect (at 68.58 107.95) (uuid 787141b7-5441-4ff0-ac68-b3fe6d47052a))
   (no_connect (at 82.55 92.71) (uuid 7fe70b2b-65ad-4df4-b7cf-94b612c79f28))
-  (no_connect (at 68.58 113.03) (uuid ba7ebcf0-696d-46fd-929e-fa69fcba8f2e))
-  (no_connect (at 83.82 113.03) (uuid c57a2795-4df2-4b71-8f64-535e4d0bfb01))
+  (no_connect (at 83.82 107.95) (uuid 8dd641dc-4ed5-465e-91e7-90c9be166a2b))
   (no_connect (at 76.2 118.11) (uuid ec6b6a6a-66f7-4a4a-a395-027affe6bbd5))
 
   (wire (pts (xy 176.53 157.48) (xy 154.94 157.48))
@@ -1043,10 +1043,6 @@
   (wire (pts (xy 176.53 128.27) (xy 176.53 129.54))
     (stroke (width 0) (type default))
     (uuid 1877ac55-7e3a-428a-b6e7-d35965ddbc70)
-  )
-  (wire (pts (xy 66.04 107.95) (xy 68.58 107.95))
-    (stroke (width 0) (type default))
-    (uuid 26295982-add2-45f6-8f41-773edb00c35a)
   )
   (wire (pts (xy 49.53 115.57) (xy 54.61 115.57))
     (stroke (width 0) (type default))
@@ -1104,6 +1100,10 @@
     (stroke (width 0) (type default))
     (uuid 56b5deb9-150d-468b-a775-563866ac8ad0)
   )
+  (wire (pts (xy 85.09 113.03) (xy 85.09 107.95))
+    (stroke (width 0) (type default))
+    (uuid 5bc1ef0a-42b5-4243-84f7-4a502413e533)
+  )
   (wire (pts (xy 115.57 166.37) (xy 170.18 166.37))
     (stroke (width 0) (type default))
     (uuid 5dfb3934-8494-45d0-828e-e8934e7f5f69)
@@ -1127,6 +1127,10 @@
   (wire (pts (xy 119.38 110.49) (xy 128.27 110.49))
     (stroke (width 0) (type default))
     (uuid 6538f125-6e36-4046-ab6a-d287d9488256)
+  )
+  (wire (pts (xy 66.04 113.03) (xy 68.58 113.03))
+    (stroke (width 0) (type default))
+    (uuid 676b0572-f5eb-4c4f-992d-e071466d9b0c)
   )
   (wire (pts (xy 134.62 110.49) (xy 134.62 91.44))
     (stroke (width 0) (type default))
@@ -1200,7 +1204,7 @@
     (stroke (width 0) (type default))
     (uuid 90e1578d-a7f0-4f17-9cd5-6928d93fe316)
   )
-  (wire (pts (xy 66.04 107.95) (xy 66.04 123.19))
+  (wire (pts (xy 66.04 113.03) (xy 66.04 123.19))
     (stroke (width 0) (type default))
     (uuid 9177d037-2933-43d9-aef2-49f8686794e0)
   )
@@ -1244,7 +1248,7 @@
     (stroke (width 0) (type default))
     (uuid aa9aba10-1f4e-4dda-bd00-1bc9967fc397)
   )
-  (wire (pts (xy 91.44 107.95) (xy 93.98 107.95))
+  (wire (pts (xy 92.71 107.95) (xy 93.98 107.95))
     (stroke (width 0) (type default))
     (uuid ac469d79-403c-4b59-b19a-6cccd734370d)
   )
@@ -1359,6 +1363,10 @@
   (wire (pts (xy 172.72 163.83) (xy 172.72 109.22))
     (stroke (width 0) (type default))
     (uuid d413e139-0cd7-450b-924c-e2003d58ced3)
+  )
+  (wire (pts (xy 85.09 113.03) (xy 83.82 113.03))
+    (stroke (width 0) (type default))
+    (uuid d432b393-4c3d-485c-8fff-bd0efcf97011)
   )
   (wire (pts (xy 86.36 87.63) (xy 82.55 87.63))
     (stroke (width 0) (type default))
@@ -1505,25 +1513,25 @@
     )
   )
 
-  (symbol (lib_id "Device:R") (at 87.63 107.95 270) (unit 1)
+  (symbol (lib_id "Device:R") (at 88.9 107.95 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 027e09e8-48a6-40f3-8bae-5088c7b62429)
-    (property "Reference" "R2" (at 87.63 101.6 90)
+    (property "Reference" "R2" (at 88.9 101.6 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "220" (at 87.63 104.14 90)
+    (property "Value" "220" (at 88.9 104.14 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 87.63 106.172 90)
+    (property "Footprint" "" (at 88.9 106.172 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 87.63 107.95 0)
+    (property "Datasheet" "~" (at 88.9 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid dce4dc72-63ba-4225-8f96-453eae64e971))
     (pin "2" (uuid 0189ac5d-f3b1-4b35-aff6-43913ff45a43))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "R2") (unit 1)
         )
@@ -1552,7 +1560,7 @@
     (pin "4" (uuid 8ec08a2c-1597-4148-a594-f0c0f905997a))
     (pin "5" (uuid 50de700e-0833-4668-b719-d58d294e877b))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "J1") (unit 1)
         )
@@ -1579,7 +1587,7 @@
     (pin "S" (uuid 73effe65-2875-40e5-b33c-01f167384d6b))
     (pin "T" (uuid 00cd3511-72a0-4709-9ecd-c7e1b3506595))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "J2") (unit 1)
         )
@@ -1617,7 +1625,7 @@
     (pin "11" (uuid d562cbef-4b18-4b3c-8586-94c874642666))
     (pin "12" (uuid d21fa2c1-5856-4ad1-bac1-2fedc80fa3df))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "U1") (unit 2)
         )
@@ -1642,7 +1650,7 @@
     )
     (pin "1" (uuid 81a684ac-f637-4f2b-85fc-aa5d2ca36b5b))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR06") (unit 1)
         )
@@ -1667,7 +1675,7 @@
     )
     (pin "1" (uuid 5edcc979-29c5-4738-b5e1-88a7d0be9d05))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR010") (unit 1)
         )
@@ -1692,7 +1700,7 @@
     )
     (pin "1" (uuid bee4f7bb-83ea-4114-83a2-1b72daee97da))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR09") (unit 1)
         )
@@ -1718,7 +1726,7 @@
     (pin "1" (uuid 438b0b3e-74ef-495b-979d-db39a8f618bc))
     (pin "2" (uuid b63bf39e-6685-4216-979e-2743897ea9f8))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "D3") (unit 1)
         )
@@ -1744,7 +1752,7 @@
     (pin "1" (uuid 5dcbb04e-0ae8-4aa8-894f-ca6a8f2664a8))
     (pin "2" (uuid 007c50a9-c487-4d1d-98d7-404f78958d65))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "D4") (unit 1)
         )
@@ -1769,7 +1777,7 @@
     )
     (pin "1" (uuid 558ffa6f-26e2-4ad6-8d03-19c19fda58d3))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR03") (unit 1)
         )
@@ -1794,7 +1802,7 @@
     )
     (pin "1" (uuid 9856e7ef-7156-4852-b9a3-c666feb48698))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR08") (unit 1)
         )
@@ -1820,7 +1828,7 @@
     (pin "1" (uuid 07f22c3e-1d02-424f-88f7-f957a973e586))
     (pin "2" (uuid 8e8e2799-44ac-41ca-91b3-be474e2b7d92))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "R4") (unit 1)
         )
@@ -1845,7 +1853,7 @@
     )
     (pin "1" (uuid dd73b2e8-492e-4d08-a727-50c4fdea9d6a))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR02") (unit 1)
         )
@@ -1871,7 +1879,7 @@
     (pin "1" (uuid 9dcf74d4-91b1-486f-98c4-b530c9f05996))
     (pin "2" (uuid a60cab30-c233-43e1-ba8a-6abe599067d8))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "R3") (unit 1)
         )
@@ -1903,7 +1911,7 @@
     (pin "7" (uuid 45624520-0531-4413-a836-3efdc93f9536))
     (pin "8" (uuid 3279844e-1c15-41df-aabe-1cb42bc4d2fe))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "U2") (unit 1)
         )
@@ -1929,7 +1937,7 @@
     (pin "1" (uuid 419a0789-d77b-4594-869b-a265d45b10d8))
     (pin "2" (uuid 2f44ffd7-fa9d-4c10-83b8-69ab41b326a6))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "R1") (unit 1)
         )
@@ -1967,7 +1975,7 @@
     (pin "11" (uuid 6ef0278d-bf5d-4a3e-9d5e-f7ae7bfdbd33))
     (pin "12" (uuid ae0ace7d-fe02-4ac0-a042-df8a865e421e))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "U1") (unit 4)
         )
@@ -1997,7 +2005,7 @@
     (pin "5" (uuid aab0eaff-0a92-4f14-96ac-a8f69f37ba76))
     (pin "6" (uuid 521261e1-99d4-4b09-ad29-0649e4ca1a82))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "U3") (unit 1)
         )
@@ -2023,7 +2031,7 @@
     (pin "1" (uuid 8cf7c9d7-73cc-4548-877b-ecdadc7a9d23))
     (pin "2" (uuid 6024032c-cbbb-4046-befd-4db76be46c3e))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "R6") (unit 1)
         )
@@ -2061,7 +2069,7 @@
     (pin "11" (uuid 0b6e37e8-c30a-4e0c-a804-52502b61badf))
     (pin "12" (uuid e2fea6f6-7807-4e61-82b9-a9d51e845390))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "U1") (unit 1)
         )
@@ -2087,7 +2095,7 @@
     (pin "1" (uuid d5fc8195-89a8-4ba7-863e-7bb9a8e8a65f))
     (pin "2" (uuid 34c3ad77-7e05-4c98-82ce-ed9e3828c472))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "C1") (unit 1)
         )
@@ -2112,7 +2120,7 @@
     )
     (pin "1" (uuid 18ca7707-864d-4dfd-a13d-0bd059f7deb8))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR01") (unit 1)
         )
@@ -2138,7 +2146,7 @@
     (pin "1" (uuid 22512757-2d5b-4f19-b45f-e48ecc0cbe23))
     (pin "2" (uuid 62edbb34-8032-4ae2-827f-041840dd715a))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "R5") (unit 1)
         )
@@ -2163,7 +2171,7 @@
     )
     (pin "1" (uuid eb07045c-5207-4d36-8c28-a773cb7c3788))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR05") (unit 1)
         )
@@ -2189,7 +2197,7 @@
     (pin "1" (uuid f8f305af-df2e-424f-96c8-6097b0acad0e))
     (pin "2" (uuid c66d81f5-f118-4826-bb62-519c27ec28f4))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "C2") (unit 1)
         )
@@ -2221,7 +2229,7 @@
     (pin "1" (uuid 2900b909-1148-4cb5-8ef9-3b56437b9758))
     (pin "2" (uuid ecdf6edb-6ec7-476b-a4b2-733bf521ee21))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "D5") (unit 1)
         )
@@ -2246,7 +2254,7 @@
     )
     (pin "1" (uuid 8da0a0ee-262b-4bf7-a206-8a18453d28ab))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR04") (unit 1)
         )
@@ -2272,7 +2280,7 @@
     (pin "1" (uuid b1a1e6d2-4eff-4327-8b34-855be2743349))
     (pin "2" (uuid 49cad57d-d439-4061-b045-5f600d549df4))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "C3") (unit 1)
         )
@@ -2297,7 +2305,7 @@
     )
     (pin "1" (uuid d3b66c89-90be-4656-8c5d-f609b90d079b))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "#PWR07") (unit 1)
         )
@@ -2323,7 +2331,7 @@
     (pin "1" (uuid 026e1ae6-b059-45a1-adc3-a10992887cc7))
     (pin "2" (uuid e4737fd6-54fa-4d86-8994-fc0d40ca4739))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "D2") (unit 1)
         )
@@ -2349,7 +2357,7 @@
     (pin "1" (uuid f2ab73d3-be54-4bcc-95b9-9e007b1bd956))
     (pin "2" (uuid bf39022a-dfd9-435a-ac5b-fc261d728d20))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "D1") (unit 1)
         )
@@ -2387,7 +2395,7 @@
     (pin "11" (uuid 9bc52533-5400-4f8e-8eec-d65c368341ec))
     (pin "12" (uuid 11725c9e-522c-4e9c-b18f-7b880f343926))
     (instances
-      (project "SyncBlaster"
+      (project "SyncBlaster_prototype"
         (path "/32dfbc9d-88bc-4ac5-b7ea-f4ca99c6c011"
           (reference "U1") (unit 3)
         )
